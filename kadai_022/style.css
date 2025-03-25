@@ -1,0 +1,89 @@
+/*a,p要素のﾌｫﾝﾄｻｲｽﾞ設定*/
+a,p {
+    font-size: 20px;
+}
+
+header {
+    margin-bottom: 20px; /*header要素　下の余白*/
+    background-color: rgb(244, 79, 79); /*要素ﾊﾞｯｸｶﾗｰ設定*/
+}
+
+h1 {
+    text-align: center; /*文字の位置設定*/
+    margin: 0px; /*余白0*/
+    color: rgb(255, 255, 255); /*文字色設定*/
+}
+
+h2 {
+    font-size: 25px; /*h2フォントサイズ25px*/
+    /*h2要素に下線*/
+    border-bottom: dotted 3px rgb(236, 122, 122);
+}
+
+h2::before {
+    content: "●"; /*h2要素の直前に●を記載*/
+    color: rgb(239, 111, 139); /*h2要素の直前の色*/
+}
+
+main {
+    margin: 10px; /*main要素上下左右10px*/
+}
+
+#parent {
+    display: flex; /*id parent要素をFlexｺﾝﾃﾅ*/
+    justify-content: space-around; /*ｱｲﾃﾑを均等な間隔で配置*/
+    align-items: center;
+}
+
+.contents {
+    border-width: 3px; /*太さ3px*/
+    border-style: solid; /*実線で囲う*/
+    border-color: rgb(238, 204, 204); /*囲う色を指定*/
+    flex-basis: 25%; /*幅は親要素の25%*/
+    padding: 10px 15px; /*要素内の余白*/
+    margin: 20px 0px; /*要素外の余白*/
+    text-align: center; /*子要素内中央揃え*/
+}
+
+/*画面幅768px以下の場合、*/
+@media screen and (max-width: 768px) {
+    #parent {
+        flex-direction: column; /*ｱｲﾃﾑの並びを上から下へ配置(初期値row)*/
+    }
+    h2 {
+        font-size: 30px; /*h2要素ﾌｫﾝﾄｻｲｽﾞ設定*/
+    }
+    p {
+        font-size: 25px; /*p要素ﾌｫﾝﾄｻｲｽﾞ設定*/
+    }
+}
+
+/*contentsクラス内、p要素(2番目のみ)の最初の文字を装飾*/
+.contents p:nth-of-type(2)::first-letter {
+    font-weight: bold; /*太字*/
+    color: rgb(97, 206, 249); /*色指定*/
+}
+
+img {
+    margin: 10px 0px; /*余白上下10px,左右0px*/
+    width: 70%; /*幅70%*/
+}
+
+footer {
+    display: flex;
+    background-color: rgb(244, 79, 79); /*背景色*/
+    justify-content: center; /*ｱｲﾃﾑを中央揃え(横方向)*/
+    align-items: center; /*ｱｲﾃﾑを中央揃え(縦方向)*/
+}
+/*a要素 通常文字色設定*/
+a {
+    color: rgb(255, 255, 255);
+}
+/*a要素 訪問済み 文字色設定*/
+a:visited {
+    color: rgb(193, 234, 251);
+}
+/*a要素 ﾏｳｽｶｰｿﾙを乗せた時の文字色設定*/
+a:hover {
+    color: rgb(245, 178, 168);
+}
